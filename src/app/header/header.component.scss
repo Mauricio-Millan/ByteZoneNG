@@ -1,0 +1,7 @@
+@use "../../styles.scss" as main;
+
+.bgnavbar {
+  background-color: main.$gris01;
+  color: main.$gris03;
+  padding: 1rem 0;
+}

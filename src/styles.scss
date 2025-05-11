@@ -1,0 +1,41 @@
+$gris01:#aeaeae;
+$gris02:#474747;
+$gris03:#374d60;
+
+.buttonactionsv1 {
+  background-color: #173160; // Color inicial del botón
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: rgb(94, 124, 154);
+    color: #211d1d; // Color más claro para el texto
+  }
+    &:active {
+    background-color: #d8d0e6; // Color más claro al hacer clic
+    transition: background-color 1.5s ease;
+  }
+}
+
+.buttonlinksv1 {
+  background-color: #6200ea; // Color inicial del botón
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: rgb(157, 108, 191);
+    color: #e0e0e0; // Color más claro para el texto
+  }
+    &:active {
+    background-color: #d8d0e6; // Color más claro al hacer clic
+    transition: background-color 1.5s ease;
+  }
+}
