@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-auto">
+            <div class="card product-card">
+                <img src="{{ producto.image_url }}" class="product-image" alt="Imagen del producto">
+                <div class="product-body">
+                    <h5 class="card-title text-wrap">{{ producto.name }}</h5>
+                    <p class="card-text">Marca: <strong>{{ producto.brand }}</strong></p>
+                    <p class="product-price">S./{{ producto.price }}</p>
+                    <a href="/Catalogo1" class="btn btn-primary btn-sm">Añadir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

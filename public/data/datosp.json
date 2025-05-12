@@ -1,0 +1,75 @@
+{
+  "products": [
+    {
+      "name": "Asus Rog Zephyrus G14",
+      "description": "Portátil de alto rendimiento con pantalla OLED 4K, procesador Intel i9 y 32GB de RAM.",
+      "brand": "Asus",
+      "price": 5899.99,
+      "image_url": "/productos/asus rog Zephyrus G14.webp"
+    },
+    {
+      "name": "Audifonos Moondrop 2",
+      "description": "Audífonos in-ear con cancelación de ruido activa y sonido envolvente 3D.",
+      "brand": "MoonDrop",
+      "price": 299.99,
+      "image_url": "/productos/audifonos.jpg"
+    },
+    {
+      "name": "RTX 5060Ti Gaming",
+      "description": "Tarjeta gráfica de alto rendimiento con 8GB de VRAM y soporte para Ray Tracing.",
+      "brand": "MSI",
+      "price": 249.99,
+      "image_url": "/productos/RTX 5060Ti.jpg"
+    },
+    {
+      "name": "Ryzen 9 9950X",
+      "description": "Procesador de 16 núcleos y 32 hilos, ideal para gaming y edición de video.",
+      "brand": "AMD",
+      "price": 2199.99,
+      "image_url": "/productos/amd ryzen9950x.jpg"
+    },
+    {
+      "name": "Monitor Asus Rog",
+      "description": "Monitor gaming de 27\" con resolución 1440p, tasa de refresco de 240Hz y tecnología G-Sync.",
+      "brand": "Asus",
+      "price": 1199.99,
+      "image_url": "/productos/monitor asus rog strix.jpg"
+    },
+    {
+      "name": "Teclado Corsair K100",
+      "description": "Teclado mecánico con switches ópticos, retroiluminación RGB personalizable y diseño ergonómico.",
+      "brand": "Corsair",
+      "price": 899.99,
+      "image_url": "/productos/Corsair K100.jpeg"
+    },
+    {
+      "name": "Case Corsair 4000D",
+      "description": "Caja ATX con panel de vidrio templado, excelente flujo de aire y gestión de cables.",
+      "brand": "Corsair",
+      "price": 460.00,
+      "image_url": "/productos/Corsair 4000D.jpeg"
+    },
+    {
+      "name": "Samsung Galaxy S23 Ultra",
+      "description": "Smartphone con pantalla AMOLED de 6.8\", procesador Snapdragon 8 Gen 2 y cámara de 200MP.",
+      "brand": "Samsung",
+      "price": 3199.99,
+      "image_url": "/productos/S23 Ultra.jpg"
+    },
+    {
+      "name": "RX 9070XT MERCURY",
+      "description": "Tarjeta gráfica de 16GB de VRAM, ideal para gaming en 4K y edición de video.",
+      "brand": "XFX",
+      "price": 4149.99,
+      "image_url": "/productos/RX9070 XT.jpg"
+    },
+    {
+      "name": "HyperX Cloud II",
+      "description": "Auriculares gaming con sonido envolvente 7.1, micrófono desmontable y almohadillas de memoria.",
+      "brand": "HyperX",
+      "price": 179.99,
+      "image_url": "/productos/HYPERX Cloud2.jpg"
+    }
+    
+  ]
+}

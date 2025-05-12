@@ -1,0 +1,121 @@
+<!-- SECTION-->
+   <section id="shop" style="margin-top: 0px;">
+    <div class="container py-5 my-5 border border-dark">
+      <div class="row flex-md-row-reverse g-md-5 mb-5 ">
+
+        <main class="col-md-9 ">
+          <div class="filter-shop d-md-flex justify-content-between align-items-center">
+            <div class="showing-product">
+              <p class="m-0">Mostrando 1-9 de 10 resultados</p>
+            </div>
+            <div class="sort-by">
+              <select class="filter-categories border-0 m-0">
+                <option value="">Vista por Defecto</option>
+                <option value="">Name (A - Z)</option>
+                <option value="">Name (Z - A)</option>
+                <option value="">Price (Low-High)</option>
+                <option value="">Price (High-Low)</option>
+                <option value="">Rating (Highest)</option>
+                <option value="">Rating (Lowest)</option>
+                <option value="">Model (A - Z)</option>
+                <option value="">Model (Z - A)</option>
+              </select>
+            </div>
+          </div>
+          <div class="sort-by">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Buscar producto"
+              [(ngModel)]="filtroProducto" />
+          </div>
+        <div class=" flex-wrap d-flex  align-items-center gap-4 mt-5">
+          <!-- Product Item -->
+          <ng-container *ngFor="let producto of products">
+            <app-producto-item
+              *ngIf="producto.name.toLowerCase().includes(filtroProducto.toLowerCase())"
+              [producto]="producto">
+            </app-producto-item>
+          </ng-container>
+        </div>
+
+          <nav class="navigation paging-navigation text-center mt-5" role="navigation">
+            <div class="pagination loop-pagination d-flex justify-content-center align-items-center">
+              <a href="#" class="pagination-arrow d-flex align-items-center mx-3">
+              </a>
+              <span aria-current="page" class="page-numbers mt-2 fs-3 mx-3 current">1</span>
+              <a class="page-numbers mt-2 fs-3 mx-3" href="#">2</a>
+              <a class="page-numbers mt-2 fs-3 mx-3" href="#">3</a>
+              <a href="#" class="pagination-arrow d-flex align-items-center mx-3">
+              </a>
+            </div>
+          </nav>
+
+        </main>
+        <aside class="col-md-3 mt-5 ">
+          <div class="sidebar border border-dark d-flex flex-column align-items-center">
+            <div class="widget-menu">
+              <div class="widget-search-bar">
+                <div class="search-bar border rounded-2 border-dark-subtle pe-3">
+                </div>
+              </div>
+            </div>
+            <div class="widget-product-categories pt-5">
+              <h4 class="widget-title">Categorias</h4>
+              <ul class="product-categories sidebar-list list-unstyled">
+                <li class="cat-item">
+                  <a href="#" class="nav-link fw-semibold">Todos</a>
+                </li>
+                <li class="cat-item">
+                  <a href="#" class="nav-link fw-semibold">Audio</a>
+                </li>
+                <li class="cat-item">
+                  <a href="#" class="nav-link fw-semibold">Visual</a>
+                </li>
+                <li class="cat-item">
+                  <a href="#" class="nav-link fw-semibold">Procesadores</a>
+                </li>
+                <li class="cat-item">
+                  <a href="#" class="nav-link fw-semibold">GPUs</a>
+                </li>
+              </ul>
+            </div>
+            <div class="widget-product-brands pt-3">
+              <h4 class="widget-title">Marcas</h4>
+              <ul class="product-tags sidebar-list list-unstyled">
+                <li class="tags-item">
+                  <a href="#" class="nav-link fw-semibold">MSI</a>
+                </li>
+                <li class="tags-item">
+                  <a href="#" class="nav-link fw-semibold">AMD</a>
+                </li>
+                <li class="tags-item">
+                  <a href="#" class="nav-link fw-semibold">NVIDIA</a>
+                </li>
+              </ul>
+            </div>
+            <div class="widget-price-filter pt-3">
+              <h4 class="widget-titlewidget-title">Filtro por</h4>
+              <ul class="product-tags sidebar-list list-unstyled">
+                <li class="tags-item">
+                  <a href="#" class="nav-link fw-semibold">Menor a $10</a>
+                </li>
+                <li class="tags-item">
+                  <a href="#" class="nav-link fw-semibold">$10- $20</a>
+                </li>
+                <li class="tags-item">
+                  <a href="#" class="nav-link fw-semibold">$20- $30</a>
+                </li>
+                <li class="tags-item">
+                  <a href="#" class="nav-link fw-semibold">$30- $40</a>
+                </li>
+                <li class="tags-item">
+                  <a href="#" class="nav-link fw-semibold">$40- $50</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
