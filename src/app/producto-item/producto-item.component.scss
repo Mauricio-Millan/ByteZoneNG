@@ -1,4 +1,4 @@
-        .product-card {
+.product-card {
             width: 200px; /* Ancho fijo */
             height: 320px; /* Alto fijo */
             border-radius: 12px; /* Bordes redondeados */
@@ -22,8 +22,34 @@
             text-align: center;
         }
 
-        .product-price {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #007bff;
-        }
+/* Contenedor de precios */
+.price-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Precio antiguo (tachado) */
+.product-price-old {
+    font-size: 0.9rem;
+    color: #888; /* Gris para desactivar */
+    text-decoration: line-through;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-10px); /* Ajusta la posición vertical */
+}
+
+/* Precio actual (destacado) */
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d9534f; /* Rojo para destacar */
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón centrado */
+.product-body .btn {
+    width: auto; /* Ajusta el ancho del botón según el contenido */
+}

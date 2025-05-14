@@ -38,7 +38,7 @@ export class ProductoserviciosService {
       return (await data.json());
     }
     async getProductsbyID(id: number): Promise<Product | undefined> {
-      const data = await fetch(`${this.url}/${id}`);
+      const data = await fetch(`${this.url}/${ id}`);
       return (await data.json()) ?? {};
     }
 

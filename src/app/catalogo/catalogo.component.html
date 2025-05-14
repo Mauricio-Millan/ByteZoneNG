@@ -69,14 +69,20 @@
           </div>
 
           <!-- Marcas -->
-          <div class="widget-product-brands mb-4">
-            <h5 class="widget-title text-center">Marcas</h5>
-            <ul class="list-group">
-              <li class="list-group-item"><a href="#" class="text-decoration-none">MSI</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">AMD</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">NVIDIA</a></li>
-            </ul>
-          </div>
+<div class="widget-product-brands mb-4">
+  <h5 class="widget-title text-center">Marcas</h5>
+  <ul class="list-group">
+    <li 
+      class="list-group-item" 
+      *ngFor="let marca of marcas">
+      <a 
+        class="text-decoration-none" 
+        (click)="filtrarPorMarca(marca.valor)">
+        {{ marca.nombre }}
+      </a>
+    </li>
+  </ul>
+</div>
 
           <!-- Filtro por precio -->
           <div class="widget-price-filter">

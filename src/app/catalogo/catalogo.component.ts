@@ -14,6 +14,14 @@ export class CatalogoComponent /* implements OnInit */ {
   productslist:Product [] = [];
   filtroProducto: string = ''; 
   filtroproductslist: Product[] = [];
+    marcas: { nombre: string, valor: string }[] = [
+    { nombre: 'MSI', valor: 'msi' },
+    { nombre: 'AMD', valor: 'amd' },
+    { nombre: 'Samsung', valor: 'Samsung' },
+        { nombre: 'Asus', valor: 'Asus' },
+            { nombre: 'Corsair', valor: 'Corsair' }
+  ];
+
 
   servicioproducto: ProductoserviciosService = inject(ProductoserviciosService);
   constructor () {
@@ -44,5 +52,16 @@ export class CatalogoComponent /* implements OnInit */ {
     this.filtroproductslist = this.productslist.filter((producto) =>
       producto?.name.toLowerCase().includes(text.toLowerCase())
   )
+  }
+    // Método para manejar la selección de una marca
+  filtrarPorMarca(marca: string) {
+        if (!marca) {
+      this.filtroproductslist = this.productslist;
+      return;
+    }
+    this.filtroproductslist = this.productslist.filter((producto) =>
+      producto?.brand.toLowerCase().includes(marca.toLowerCase())
+  )
+    // Aquí puedes implementar la lógica para filtrar productos por marca
   }
 }

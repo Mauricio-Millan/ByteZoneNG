@@ -6,8 +6,14 @@
                 <div class="product-body">
                     <h5 class="card-title text-wrap">{{ producto.name }}</h5>
                     <p class="card-text">Marca: <strong>{{ producto.brand }}</strong></p>
-                    <p class="product-price">S./{{ producto.price }}</p>
-                    <a [routerLink]="['/detalle', producto.id]" class="btn btn-primary btn-sm">Añadir</a>
+                    <div class="price-container">
+                        <p class="product-price-old">S./{{ producto.price }}</p>
+                        <p class="product-price">S./{{ producto.price - producto.price *0.10 | number:'1.2-2'}}</p>
+                    </div>
+                    <!-- Contenedor para centrar el botón -->
+                    <div class="d-flex justify-content-center mt-3">
+                        <a [routerLink]="['/detalle', producto.id]" class="btn btn-primary btn-sm">Añadir</a>
+                    </div>
                 </div>
             </div>
         </div>
