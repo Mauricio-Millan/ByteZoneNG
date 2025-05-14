@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
- import { map } from 'rxjs/operators';
 import { apiServer } from '../apiServer';
 
 
 export interface Product {
+  id: number;
   name: string;
   description: string;
   brand: string;
   price: number;
   image_url: string;
+  info: string;
 }
 
 
@@ -20,6 +19,7 @@ export interface Product {
 
 export class ProductoserviciosService {
 
+  /*
   private apiUrl: string = apiServer.serverURL;
   constructor(private http: HttpClient) { }
 
@@ -28,4 +28,18 @@ export class ProductoserviciosService {
       map(response => response.products) // Extrae solo el array de productos
     );
   }
+    */
+
+  constructor() { }
+
+  url="http://localhost:3000/products";
+    async getAllProducts(): Promise<Product[]> {
+      const data = await fetch(this.url);
+      return (await data.json());
+    }
+    async getProductsbyID(id: number): Promise<Product | undefined> {
+      const data = await fetch(`${this.url}/${id}`);
+      return (await data.json()) ?? {};
+    }
+
 }

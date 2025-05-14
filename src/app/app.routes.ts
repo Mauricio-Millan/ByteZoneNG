@@ -10,6 +10,6 @@ export const routes: Routes = [
     {path: 'Catalogo', component : CatalogoComponent, title: 'Catalogo de Productos'},
     {path: 'Nosotros', component : NosotrosComponent, title: 'Nosotros'},
     {path: 'Tiendas', component : TiendasComponent, title: 'Nuestros Puntos de Venta'},
-    {path: 'Catalogo1', component : ProductoFullComponent, title: 'Producto Full' },
+    {path: 'detalle/:id', component : ProductoFullComponent, title: 'Producto Full' },
 
 ];

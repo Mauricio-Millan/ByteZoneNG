@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../services/productoservicios.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-producto-item',
   standalone: true, // Marca el componente como independiente
-  imports: [CommonModule], // Importa CommonModule si es necesario
+  imports: [CommonModule, RouterModule], // Importa CommonModule si es necesario
   templateUrl: './producto-item.component.html',
   styleUrl: './producto-item.component.scss'
 })

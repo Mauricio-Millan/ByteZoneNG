@@ -7,7 +7,7 @@
                     <h5 class="card-title text-wrap">{{ producto.name }}</h5>
                     <p class="card-text">Marca: <strong>{{ producto.brand }}</strong></p>
                     <p class="product-price">S./{{ producto.price }}</p>
-                    <a href="/Catalogo1" class="btn btn-primary btn-sm">Añadir</a>
+                    <a [routerLink]="['/detalle', producto.id]" class="btn btn-primary btn-sm">Añadir</a>
                 </div>
             </div>
         </div>
