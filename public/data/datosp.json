@@ -16,7 +16,7 @@
       "brand": "MoonDrop",
       "price": 299.99,
       "image_url": "/productos/audifonos.jpg",
-      "info": "Experiencia auditiva inmersiva con tecnología avanzada de cancelación de ruido."
+      "info": "https://moondroplab.com/en/products/edge"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "brand": "MSI",
       "price": 249.99,
       "image_url": "/productos/RTX 5060Ti.jpg",
-      "info": "Gráficos de última generación para gaming y aplicaciones gráficas exigentes."
+      "info": "https://www.msi.com/Graphics-Card/GeForce-RTX-5060-Ti-16G-GAMING-TRIO-OC/#:~:text=MSI%20GeForce%20RTX%205060%20Ti%2016G%20GAMING%20TRIO,for%20superior%20cooling%2C%20minimal%20noise%2C%20and%20exceptional%20performance."
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "brand": "AMD",
       "price": 2199.99,
       "image_url": "/productos/amd ryzen9950x.jpg",
-      "info": "Potencia extrema para tareas demandantes y rendimiento sin compromisos."
+      "info": "https://www.amd.com/es/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x.html"
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "brand": "Asus",
       "price": 1199.99,
       "image_url": "/productos/monitor asus rog strix.jpg",
-      "info": "Pantalla fluida y vibrante para una experiencia gaming superior."
+      "info": "https://rog.asus.com/content/best-oled-gaming-monitor/"
     },
     {
       "id": 6,
@@ -52,7 +52,7 @@
       "brand": "Corsair",
       "price": 899.99,
       "image_url": "/productos/Corsair K100.jpeg",
-      "info": "Respuesta rápida y personalización avanzada para usuarios exigentes."
+      "info": "https://www.corsair.com/es/es/p/keyboards/ch-912a01a-na/k100-rgb-optical-mechanical-gaming-keyboard-corsair-opx-switch-black-ch-912a01a-na"
     },
     {
       "id": 7,
@@ -61,7 +61,7 @@
       "brand": "Corsair",
       "price": 460.00,
       "image_url": "/productos/Corsair 4000D.jpeg",
-      "info": "Diseño elegante con óptima circulación de aire para mantener tu sistema fresco."
+      "info": "https://www.corsair.com/es/es/p/pc-cases/cc-9011290-ww/frame-4000d-modular-mid-tower-pc-case-cc-9011290-ww"
     },
     {
       "id": 8,
@@ -70,7 +70,7 @@
       "brand": "Samsung",
       "price": 3199.99,
       "image_url": "/productos/S23 Ultra.jpg",
-      "info": "Un dispositivo premium con cámara avanzada y rendimiento de alta gama."
+      "info": "https://www.smart-gsm.com/moviles/samsung-galaxy-s23-ultra"
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "brand": "XFX",
       "price": 4149.99,
       "image_url": "/productos/RX9070 XT.jpg",
-      "info": "Máxima potencia gráfica para juegos en 4K y trabajos de alto rendimiento."
+      "info": "https://www.xfxforce.com/shop/xfx-mercury-amd-radeon-rx-9070xt-gaming-edition"
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "brand": "HyperX",
       "price": 179.99,
       "image_url": "/productos/HYPERX Cloud2.jpg",
-      "info": "Audio envolvente y comodidad para largas sesiones de juego."
+      "info": "https://row.hyperx.com/es/products/hyperx-cloud-ii?variant=40209424646349"
     }
   ]
 }
