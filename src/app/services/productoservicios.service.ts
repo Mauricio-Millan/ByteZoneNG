@@ -10,6 +10,8 @@ export interface Product {
   price: number;
   image_url: string;
   info: string;
+  categoria: string;
+  descuento: number;
 }
 
 
@@ -40,6 +42,22 @@ export class ProductoserviciosService {
     async getProductsbyID(id: number): Promise<Product | undefined> {
       const data = await fetch(`${this.url}/${ id}`);
       return (await data.json()) ?? {};
+    }
+
+    // Obtiene todas las categorías únicas de los productos
+    async getCategorias(): Promise<string[]> {
+      const productos = await this.getAllProducts();
+      const categorias = productos.map(p => p.categoria);
+      // Devuelve solo categorías únicas
+      return Array.from(new Set(categorias));
+    }
+
+    // Obtiene todas las marcas únicas de los productos
+    async getMarcas(): Promise<string[]> {
+      const productos = await this.getAllProducts();
+      const marcas = productos.map(p => p.brand);
+      // Devuelve solo marcas únicas
+      return Array.from(new Set(marcas));
     }
 
 }

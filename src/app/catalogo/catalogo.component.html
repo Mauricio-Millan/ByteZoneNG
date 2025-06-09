@@ -1,13 +1,32 @@
-<section id="shop" style="margin-top: 0px;">
-  <div class="container py-5 my-5 border border-dark">
+<section id="shop" style="margin-top: 0px; background: #f4f8fb;">
+  <div class="container py-5 my-5 border border-dark rounded" style="background: #fff;">
     <div class="row flex-md-row-reverse g-md-5 mb-5">
       <main class="col-md-9">
-        <div class="filter-shop d-md-flex justify-content-between align-items-center">
+
+        <!-- CATEGORÍAS ARRIBA DEL CATÁLOGO -->
+        <div class="mb-4">
+          <nav class="nav gap-2 justify-content-center flex-nowrap overflow-auto px-2 py-2 rounded"
+               style="background: #e3f0fc;">
+            <a class="nav-link px-3 py-2 rounded-pill text-dark fw-semibold"
+               style="background: #d1eaff;"
+               (click)="filtroProductos('')">Todos</a>
+            <a *ngFor="let categoria of categorias"
+               class="nav-link px-3 py-2 rounded-pill text-dark fw-semibold"
+               (click)="filtrarPorCategoria(categoria)">
+              {{ categoria }}
+            </a>
+          </nav>
+        </div>
+        <!-- FIN CATEGORÍAS -->
+
+        <div class="filter-shop d-md-flex justify-content-between align-items-center mb-3">
           <div class="showing-product">
-            <p class="m-0">Mostrando 1-9 de 10 resultados</p>
+            <p class="m-0 text-secondary">
+              Mostrando {{ (page - 1) * pageSize + 1 }}-{{ (page * pageSize) > filtroproductslist.length ? filtroproductslist.length : (page * pageSize) }} de {{ filtroproductslist.length }} resultados
+            </p>
           </div>
           <div class="sort-by">
-            <select class="filter-categories border-0 m-0">
+            <select class="filter-categories border-0 m-0 rounded-pill px-3 py-2" style="background: #e3f0fc;">
               <option value="">Vista por Defecto</option>
               <option value="">Name (A - Z)</option>
               <option value="">Name (Z - A)</option>
@@ -22,12 +41,12 @@
         </div>
 
         <!-- Formulario de búsqueda con botón para abrir el aside -->
-        <form class="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-4">
-          <input type="text" placeholder="Buscar producto" class="form-control w-auto" #BuscarProducto />
-          <button (click)="filtroProductos(BuscarProducto.value)" type="submit" class="btn btn-primary">Buscar</button>
+        <form class="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-4" (submit)="filtroProductos(BuscarProducto.value); $event.preventDefault();">
+          <input type="text" placeholder="Buscar producto" class="form-control w-auto rounded-pill" #BuscarProducto />
+          <button type="submit" class="btn btn-primary rounded-pill">Buscar</button>
           <!-- Botón para abrir el aside en pantallas pequeñas -->
           <button
-            class="btn btn-secondary d-md-none"
+            class="btn btn-outline-primary d-md-none rounded-pill"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#asideOffcanvas"
@@ -36,63 +55,54 @@
           </button>
         </form>
 
-        <div class="flex-wrap d-flex align-items-center gap-4 mt-5">
-          <!-- Product Item -->
-          <app-producto-item *ngFor="let producto of filtroproductslist" [producto]="producto">
-          </app-producto-item>
-        </div>
+    <!-- Catálogo de productos -->
+    <div class="flex-wrap d-flex align-items-center gap-4 mt-5 justify-content-center">
+      <app-producto-item *ngFor="let producto of paginatedProducts" [producto]="producto"></app-producto-item>
+    </div>
 
-        <nav class="navigation paging-navigation text-center mt-5" role="navigation">
-          <div class="pagination loop-pagination d-flex justify-content-center align-items-center">
-            <a href="#" class="pagination-arrow d-flex align-items-center mx-3"></a>
-            <span aria-current="page" class="page-numbers mt-2 fs-3 mx-3 current">1</span>
-            <a class="page-numbers mt-2 fs-3 mx-3" href="#">2</a>
-            <a class="page-numbers mt-2 fs-3 mx-3" href="#">3</a>
-            <a href="#" class="pagination-arrow d-flex align-items-center mx-3"></a>
+        <!-- Paginación -->
+        <nav class="navigation paging-navigation text-center mt-5" role="navigation" *ngIf="totalPages > 1">
+          <div class="pagination loop-pagination d-flex justify-content-center align-items-center flex-wrap">
+            <button class="btn btn-outline-primary mx-1" [disabled]="page === 1" (click)="cambiarPagina(page - 1)">
+              &laquo;
+            </button>
+            <button
+              *ngFor="let p of [].constructor(totalPages); let i = index"
+              class="btn mx-1"
+              [ngClass]="{'btn-primary': page === i + 1, 'btn-outline-primary': page !== i + 1}"
+              (click)="cambiarPagina(i + 1)">
+              {{ i + 1 }}
+            </button>
+            <button class="btn btn-outline-primary mx-1" [disabled]="page === totalPages" (click)="cambiarPagina(page + 1)">
+              &raquo;
+            </button>
           </div>
         </nav>
       </main>
 
       <!-- Aside para pantallas grandes -->
       <aside class="col-md-3 mt-5 d-none d-md-block">
-        <div class="sidebar border border-dark rounded p-3">
-          <!-- Categorías -->
-          <div class="widget-product-categories mb-4">
-            <h5 class="widget-title text-center">Categorías</h5>
+        <div class="sidebar border border-dark rounded p-3" style="background: #f4f8fb;">
+          <!-- Marcas -->
+          <div class="widget-product-brands mb-4">
+            <h5 class="widget-title text-center text-primary">Marcas</h5>
             <ul class="list-group">
-              <li class="list-group-item"><a href="#" class="text-decoration-none">Todos</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">Audio</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">Visual</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">Procesadores</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">GPUs</a></li>
+              <li class="list-group-item" *ngFor="let marca of marcas">
+                <a class="text-decoration-none text-dark" (click)="filtrarPorMarca(marca)">
+                  {{ marca }}
+                </a>
+              </li>
             </ul>
           </div>
-
-          <!-- Marcas -->
-<div class="widget-product-brands mb-4">
-  <h5 class="widget-title text-center">Marcas</h5>
-  <ul class="list-group">
-    <li 
-      class="list-group-item" 
-      *ngFor="let marca of marcas">
-      <a 
-        class="text-decoration-none" 
-        (click)="filtrarPorMarca(marca.valor)">
-        {{ marca.nombre }}
-      </a>
-    </li>
-  </ul>
-</div>
-
           <!-- Filtro por precio -->
           <div class="widget-price-filter">
-            <h5 class="widget-title text-center">Precio</h5>
+            <h5 class="widget-title text-center text-primary">Precio</h5>
             <ul class="list-group">
-              <li class="list-group-item"><a href="#" class="text-decoration-none">Menor a $10</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">$10 - $20</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">$20 - $30</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">$30 - $40</a></li>
-              <li class="list-group-item"><a href="#" class="text-decoration-none">$40 - $50</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Menor a $10</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">$10 - $20</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">$20 - $30</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">$30 - $40</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">$40 - $50</a></li>
             </ul>
           </div>
         </div>
@@ -105,42 +115,31 @@
         id="asideOffcanvas"
         aria-labelledby="asideOffcanvasLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="asideOffcanvasLabel">Filtros</h5>
+          <h5 class="offcanvas-title text-primary" id="asideOffcanvasLabel">Filtros</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <div class="sidebar border border-dark rounded p-3">
-            <!-- Categorías -->
-            <div class="widget-product-categories mb-4">
-              <h5 class="widget-title text-center">Categorías</h5>
-              <ul class="list-group">
-                <li class="list-group-item"><a href="#" class="text-decoration-none">Todos</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">Audio</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">Visual</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">Procesadores</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">GPUs</a></li>
-              </ul>
-            </div>
-
+          <div class="sidebar border border-dark rounded p-3" style="background: #f4f8fb;">
             <!-- Marcas -->
             <div class="widget-product-brands mb-4">
-              <h5 class="widget-title text-center">Marcas</h5>
+              <h5 class="widget-title text-center text-primary">Marcas</h5>
               <ul class="list-group">
-                <li class="list-group-item"><a href="#" class="text-decoration-none">MSI</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">AMD</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">NVIDIA</a></li>
+                <li class="list-group-item" *ngFor="let marca of marcas">
+                  <a class="text-decoration-none text-dark" (click)="filtrarPorMarca(marca)">
+                    {{ marca }}
+                  </a>
+                </li>
               </ul>
             </div>
-
             <!-- Filtro por precio -->
             <div class="widget-price-filter">
-              <h5 class="widget-title text-center">Precio</h5>
+              <h5 class="widget-title text-center text-primary">Precio</h5>
               <ul class="list-group">
-                <li class="list-group-item"><a href="#" class="text-decoration-none">Menor a $10</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">$10 - $20</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">$20 - $30</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">$30 - $40</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">$40 - $50</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Menor a $10</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">$10 - $20</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">$20 - $30</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">$30 - $40</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">$40 - $50</a></li>
               </ul>
             </div>
           </div>
