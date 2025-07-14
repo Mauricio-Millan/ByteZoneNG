@@ -1,0 +1,28 @@
+footer{
+border-style: solid ;
+border-color: #000;
+background-color: gray;
+
+}
+    footer .logo-footer{
+        display: flex;
+        justify-content: center;
+    }
+    footer .logo-footer img{
+        margin-top: 5px;
+    }
+    footer p {
+        text-align: center;
+        font-size: x-large;
+    }
+    footer .redes{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;/*ajustando contenido */
+    }
+        .redes a{
+            text-decoration: none;/* Levantando estilos de link*/
+            color: #000;
+            font-size: xx-large;
+            padding: 10px;
+        }

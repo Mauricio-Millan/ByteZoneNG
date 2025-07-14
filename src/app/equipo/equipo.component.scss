@@ -1,0 +1,256 @@
+.cv-container1 {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #232946; // Fondo azul oscuro similar a .cv-container2
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+
+  .cv-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #3b3b5b;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .cv-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2rem;
+    border: 3px solid #eebbc3; // Borde rosado claro
+  }
+
+  .cv-info h2 {
+    margin: 0 0 0.5rem 0;
+    color: #eebbc3; // Título rosado claro
+  }
+
+  .cv-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+  }
+
+  .cv-contacto li {
+    margin-bottom: 0.3rem;
+  }
+
+  .cv-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .cv-section {
+    flex: 1 1 250px;
+    margin-bottom: 1.5rem;
+  }
+
+  .cv-section h3 {
+    color: #eebbc3;
+    margin-bottom: 0.7rem;
+  }
+
+  .cv-exp, .cv-edu {
+    margin-bottom: 1rem;
+  }
+
+  .cv-exp strong, .cv-edu strong {
+    color: #fffffe;
+  }
+
+  @media (max-width: 700px) {
+    .cv-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .cv-foto {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+    .cv-body {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}
+
+/* -----------------------------------------------------------
+-----------------------------------------------------------
+----------------------------------------------------------- */
+// Cv 2
+.cv-container2 {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #232946; // Fondo azul oscuro
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+
+  .cv-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #3b3b5b;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .cv-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2rem;
+    border: 3px solid #eebbc3; // Borde rosado claro
+  }
+
+  .cv-info h2 {
+    margin: 0 0 0.5rem 0;
+    color: #eebbc3; // Título rosado claro
+  }
+
+  .cv-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+  }
+
+  .cv-contacto li {
+    margin-bottom: 0.3rem;
+  }
+
+  .cv-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .cv-section {
+    flex: 1 1 250px;
+    margin-bottom: 1.5rem;
+  }
+
+  .cv-section h3 {
+    color: #eebbc3;
+    margin-bottom: 0.7rem;
+  }
+
+  .cv-exp, .cv-edu {
+    margin-bottom: 1rem;
+  }
+
+  .cv-exp strong, .cv-edu strong {
+    color: #fffffe;
+  }
+
+  @media (max-width: 700px) {
+    .cv-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .cv-foto {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+    .cv-body {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}
+
+/* -----------------------------------------------------------
+-----------------------------------------------------------
+----------------------------------------------------------- */
+// Cv 3
+.cv-container3 {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #22223b; // Fondo morado oscuro
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #f2e9e4;
+
+  .cv-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #4a4e69;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .cv-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2rem;
+    border: 3px solid #9a8c98; // Borde lila claro
+  }
+
+  .cv-info h2 {
+    margin: 0 0 0.5rem 0;
+    color: #c9ada7; // Título lila claro
+  }
+
+  .cv-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+  }
+
+  .cv-contacto li {
+    margin-bottom: 0.3rem;
+  }
+
+  .cv-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .cv-section {
+    flex: 1 1 250px;
+    margin-bottom: 1.5rem;
+  }
+
+  .cv-section h3 {
+    color: #c9ada7;
+    margin-bottom: 0.7rem;
+  }
+
+  .cv-exp, .cv-edu {
+    margin-bottom: 1rem;
+  }
+
+  .cv-exp strong, .cv-edu strong {
+    color: #f2e9e4;
+  }
+
+  @media (max-width: 700px) {
+    .cv-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .cv-foto {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+    .cv-body {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}

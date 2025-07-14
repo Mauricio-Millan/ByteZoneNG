@@ -1,0 +1,55 @@
+.product-card {
+            width: 200px; /* Ancho fijo */
+            height: 320px; /* Alto fijo */
+            border-radius: 12px; /* Bordes redondeados */
+            overflow: hidden; /* Evita que el contenido sobresalga */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05); /* Efecto al pasar el ratón */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+
+        .product-image {
+            width: 100%; /* Ajusta el ancho al contenedor */
+            height: 120px; /* Fija la altura */
+            object-fit: scale-down; /* Ajuste sin deformaciones */
+        }
+
+        .product-body {
+            padding: 10px;
+            text-align: center;
+        }
+
+/* Contenedor de precios */
+.price-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Precio antiguo (tachado) */
+.product-price-old {
+    font-size: 0.9rem;
+    color: #888; /* Gris para desactivar */
+    text-decoration: line-through;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-10px); /* Ajusta la posición vertical */
+}
+
+/* Precio actual (destacado) */
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d9534f; /* Rojo para destacar */
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón centrado */
+.product-body .btn {
+    width: auto; /* Ajusta el ancho del botón según el contenido */
+}

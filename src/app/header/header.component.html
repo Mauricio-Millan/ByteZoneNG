@@ -1,0 +1,212 @@
+<!-- Scrip -->
+ <script>
+    document.getElementById("modeSwitch").addEventListener("change", function () {
+        const modalContent = document.getElementById("modalContent");
+        const modalTitle = document.getElementById("modalTitle");
+        const loginForm = document.getElementById("loginForm");
+        const registerForm = document.getElementById("registerForm");
+
+        if (this.checked) {
+            modalContent.classList.remove("modal-login");
+            modalContent.classList.add("modal-register");
+            modalTitle.textContent = "Registro de Usuario";
+            loginForm.classList.add("d-none");
+            registerForm.classList.remove("d-none");
+        } else {
+            modalContent.classList.remove("modal-register");
+            modalContent.classList.add("modal-login");
+            modalTitle.textContent = "Iniciar Sesión";
+            registerForm.classList.add("d-none");
+            loginForm.classList.remove("d-none");
+        }
+    });
+
+</script>
+
+  <!-- Content here -->
+   <nav class="navbar navbar-expand-md navbar-dark bg-secondary" style="margin-bottom: 0px;">
+
+        <div class="container  d-flex justify-content-center justify-content-md-around">
+
+            <a href="" class="navbar-brand">
+                <img src="/info/ByteZoneV2.jpg" class="rounded-circle" width="75" height="75" alt="Imagen circular">
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacion">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu-navegacion">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Catalogo" class="nav-link">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Nosotros" class="nav-link">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Tiendas" class="nav-link">Tiendas</a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="/Equipo" class="nav-link">Equipo </a>
+                    </li>
+<!-- Botón para abrir el modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                login
+                </button>
+
+<!-- Modal -->
+<div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body bg-secondary">
+
+        <a href="https://front.codes/" class="logo" target="_blank">
+          <img src="https://assets.codepen.io/1462889/fcy.png" alt="">
+        </a>
+
+        <div class="section">
+          <div class="container">
+            <div class="row full-height justify-content-center">
+              <div class="col-12 text-center align-self-center py-5">
+                <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                  <h6 class="mb-0 pb-3" style="color: rgb(130, 153, 77);"><span>Inicio de Sesion </span><span>Registro</span></h6>
+                  <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                  <label for="reg-log"></label>
+                  <div class="card-3d-wrap mx-auto">
+                    <div class="card-3d-wrapper">
+                      <div class="card-front">
+                        <div class="center-wrap">
+                          <div class="section text-center">
+                            <h4 class="mb-4 pb-3" style="color: rgb(130, 153, 77);">Inicio de Sesion</h4>
+                            <!-- Formulario Angular de Login -->
+                            <form (ngSubmit)="login()" #loginForm="ngForm">
+                              <div class="form-group">
+                                <input
+                                  type="text"
+                                  name="name"
+                                  class="form-style"
+                                  placeholder="Usuario"
+                                  id="logemail"
+                                  [(ngModel)]="usuario.usuario"
+                                  required
+                                  autocomplete="off"
+                                >
+                                <i class="input-icon uil uil-at"></i>
+                              </div>
+                              <div class="form-group mt-2">
+                                <input
+                                  type="password"
+                                  name="password"
+                                  class="form-style"
+                                  placeholder="Tu Clave"
+                                  id="logpass"
+                                  [(ngModel)]="usuario.clave"
+                                  required
+                                  autocomplete="off"
+                                >
+                                <i class="input-icon uil uil-lock-alt"></i>
+                              </div>
+                              <button type="submit" class="btn mt-4">Enviar</button>
+<!-- Notificación flotante para el mensaje de login -->
+<div 
+  *ngIf="mensajeLogin" 
+  class="toast align-items-center text-white bg-primary border-0 position-fixed top-0 end-0 m-4 show"
+  style="z-index: 2000; min-width: 250px;"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      {{ mensajeLogin }}
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" aria-label="Close" (click)="mensajeLogin = ''"></button>
+  </div>
+</div>
+                            </form>
+                            <!-- Fin Formulario Angular de Login -->
+                            <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Olvidaste tu Contraseña?</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-back">
+                        <div class="center-wrap">
+                          <div class="section text-center">
+                            <h4 class="mb-4 pb-3 " style="color: rgb(133, 158, 75);">Registrate</h4>
+                            <div class="form-group">
+                              <input type="text" name="logname" class="form-style" placeholder="Nombre Completo" id="logname" autocomplete="off">
+                              <i class="input-icon uil uil-user"></i>
+                            </div>
+                            <div class="form-group mt-2">
+                              <input type="email" name="logemail" class="form-style" placeholder="Tu Email" id="logemail" autocomplete="off">
+                              <i class="input-icon uil uil-at"></i>
+                            </div>
+                            <div class="form-group mt-2">
+                              <input type="password" name="logpass" class="form-style" placeholder="Tu Clave" id="logpass" autocomplete="off">
+                              <i class="input-icon uil uil-lock-alt"></i>
+                            </div>
+                            <a href="#" class="btn mt-4">Enviar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                </ul>
+            </div>
+        </div>
+   </nav>
+
+<!-- Usuario logueado en la esquina superior derecha, ahora responsive -->
+<div *ngIf="usuarioLogueado" 
+     class="position-fixed top-0 end-0 m-2 m-sm-3 px-3 px-sm-4 py-2 rounded-pill d-flex flex-column align-items-center user-logged-badge"
+     style="background: #232946; color: #eebbc3; font-weight: bold; z-index: 3000; box-shadow: 0 2px 8px rgba(0,0,0,0.15); min-width: 110px; max-width: 90vw;">
+  <div class="w-100 text-center text-truncate" style="max-width: 140px;">
+    <i class="uil uil-user"></i> {{ usuarioLogueado }}
+  </div>
+  <button 
+    class="mt-2 border-0 rounded-circle d-flex align-items-center justify-content-center bg-light hover:bg-primary"
+    style="width: 40px; height: 40px; transition: background 0.2s;"
+    type="button">
+    <i class="fa-solid fa-cart-shopping"></i>
+  </button>
+</div>
+
+<style>
+/* Responsive para el usuario logueado */
+@media (max-width: 576px) {
+  .user-logged-badge {
+    min-width: 90px !important;
+    max-width: 80vw !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    font-size: 0.95rem;
+  }
+  .user-logged-badge .w-100 {
+    max-width: 90vw !important;
+    font-size: 0.95rem;
+  }
+}
+  .bg-light:hover, .hover\:bg-primary:hover {
+    background: #232946 !important;
+    color: #eebbc3 !important;
+  }
+  .bg-light:hover i, .hover\:bg-primary:hover i {
+    color: #eebbc3 !important;
+  }
+</style>
